@@ -9,33 +9,30 @@ const config = require("./config.json")
 const tokenFile = require("./token.json")
 const Discord = require("discord.js");
 const fs = require("fs");
-const bot = new Discord.Client({disableEveryone: true})
-bot.commands = new Discord.Collection();
+const cmdDir = fs.readdirSync('./commands/');
+const client = new Discord.Client({disableEveryone: true})
+client.commands = new Discord.Collection();
+client.groups = new Map;
 
-fs.readdir("./commands", (err, files) => {
-  if(err) console.lor(err);
+for (let dir of cmdDir) {
+    console.log("- Loading group " + dir);
+    client.groups.push(dir);
+    let group = fs.readdirSync(`./commands/${dir}`);
+    for (let commandFile of group) {
+        console.log("-- Loading command " + commandFile.split(".")[0] + " of " + dir)
+        if (!commandFile.endsWith('.js')) return;
+        let command = require(`../commands/${dir}/${commandFile}`);
+        client.commands.set(commandFile.split('.')[0], [command, dir]);
+    }
+}
 
-  let jsfile = files.filter(f => f.split(".").pop() === "js")
-  if(jsfile.length <= 0){
-    console.log("[INFO] No commands loaded!")
-    return;
-  }
-
-jsfile.forEach((f, i) =>{
-  let props = require(`./commands/${f}`);
-  console.log(`[INFO] "${f}" loaded!`);
-  bot.commands.set(props.help.name, props);
-});
-
-});
-
-bot.on("ready", async () => {
+client.on("ready", async () => {
     console.log(`[INFO] ${bot.user.username} has succesfully started!`);
-    bot.user.setActivity(config.acitivityText, {type: config.acitivityType});
-    bot.user.setStatus(`${config.status}`);
+    client.user.setActivity(config.acitivityText, {type: config.acitivityType});
+    client.user.setStatus(`${config.status}`);
 });
 
-bot.on("message", async message => {
+client.on("message", async message => {
     if(message.author.bot) return;
     if(message.channel.type === "dm") {
         return message.channel.send(`[INFO] DM Commands are still work in progress`);
@@ -53,4 +50,4 @@ bot.on("message", async message => {
 
 });
 
-bot.login(tokenFile.token);
+client.login(tokenFile.token);
