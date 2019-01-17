@@ -6,11 +6,11 @@ function sendHelp(config, client, cmd, author, message) {
   .setColor(config.mainColor)
   .setFooter(`${client.user.username} ● ${cmd} ● Requested by ${author.tag}`)
   .setDescription(`Please use ${config.prefix}help <category> to see the commands`)
-  .addField("Moderation", "View all moderation commands.")
-  .addField("Economy", "View all economy commands.")
-  .addField("Experience", "View all experience commands.")
-  .addField("Developer", "View all commands only availible to developers of the bot.")
-  .addField("Miscellaneous", "View all other commands.")
+  .addField("Moderation", "View all moderation commands.", true)
+  .addField("Economy", "View all economy commands.", true)
+  .addField("Experience", "View all experience commands.", true)
+  .addField("Developer", "View commands availible to developers.", true)
+  .addField("Miscellaneous", "View all other commands.", true)
   return message.channel.send(embed);
 }
 
