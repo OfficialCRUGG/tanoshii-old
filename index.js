@@ -22,8 +22,8 @@ for (let dir of cmdDir) {
     for (let commandFile of group) {
         console.log("-- Loading command " + commandFile.split(".")[0] + " of " + dir);
         if (!commandFile.endsWith('.js')) return;
-        let command = require(`../commands/${dir}/${commandFile}`);
-        client.commands.set(commandFile.split('.')[0], [command, dir]);
+        let command = require(`./commands/${dir}/${commandFile}`);
+        client.commands.set(commandFile.split('.')[0], command);
     }
 }
 fs.readdir("./events", (err, files) => {
@@ -31,7 +31,7 @@ fs.readdir("./events", (err, files) => {
     files.forEach(file => {
         if (!file.endsWith(".js")) return;
         console.log(`- Loading file ${file.split('.')[0]}`);
-        const event = require(`../events/${file}`);
+        const event = require(`./events/${file}`);
         let eventName = file.split(".")[0];
         client.on(eventName, event.bind(null, client));
     });
