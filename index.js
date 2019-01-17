@@ -13,7 +13,7 @@ const cmdDir = fs.readdirSync('./commands/');
 const client = new Discord.Client({disableEveryone: true});
 client.config = config;
 client.commands = new Discord.Collection();
-client.groups = new Map;
+client.groups = [];
 
 for (let dir of cmdDir) {
     console.log("- Loading group " + dir);
