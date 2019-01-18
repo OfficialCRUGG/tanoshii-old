@@ -1,2 +1,10 @@
-node-modules
-.idea
+node-modules/
+.idea/
+.vscode/
+pids
+*.pid
+*.seed
+*.pid.lock
+logs
+*.log
+token.json
