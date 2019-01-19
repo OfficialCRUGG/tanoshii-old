@@ -9,8 +9,8 @@ client.commands = new Discord.Collection();
 client.groups = [];
 
 for (let dir of cmdDir) {
-    console.log("[INFO] Loading command category " + dir ".");
     client.groups.push(dir);
+    console.log("[INFO] Loading command category " + dir + ".");
     let group = fs.readdirSync(`./commands/${dir}`);
     for (let commandFile of group) {
         console.log("[INFO] Loading command " + dir + "/" + commandFile.split(".")[0] + ".");
