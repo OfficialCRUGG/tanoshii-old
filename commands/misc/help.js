@@ -51,7 +51,7 @@ function sendMisc(config, client, cmd, author, message) {
   .setTitle("ManageMe - Miscellaneous commands")
   .setColor(config.mainColor)
   .setFooter(`${client.user.username} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
-  .addField("No commands", "There are currently no commands in this category")
+  .addField(`${config.prefix}ping`, "View respond latency and API latency.", true)
   return message.channel.send(embed);
 }
 
