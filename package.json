@@ -17,6 +17,9 @@
   },
   "homepage": "https://github.com/mm-discord/manageme#readme",
   "dependencies": {
-    "discord.js": "^11.4.2"
+    "discord.js": "^11.4.2",
+    "mysql2": "^1.6.4",
+    "node-http-ping": "^0.3.1",
+    "sequelize": "^4.42.0"
   }
 }
