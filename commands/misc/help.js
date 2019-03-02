@@ -56,6 +56,7 @@ function sendMisc(config, client, cmd, author, message) {
     .setColor(config.mainColor)
     .setFooter(`${client.user.username} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
     .addField(`${config.prefix}ping`, "View respond latency and API latency.", true)
+    .addField(`${config.prefix}devmessage`, "Send a message to all developers. (Used for bug reports, suggestions etc.)", true)
   return message.channel.send(embed);
 }
 
