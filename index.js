@@ -1,5 +1,4 @@
 const config = require("./config.json");
-const tokenFile = require("./token.json");
 const Discord = require("discord.js");
 const fs = require("fs");
 const cmdDir = fs.readdirSync('./commands/');
@@ -33,4 +32,4 @@ fs.readdir("./events", (err, files) => {
 });
 
 
-client.login(tokenFile.token);
+client.login(config.token);
