@@ -4,7 +4,7 @@ function sendHelp(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Help")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
     .setDescription(`Please use ${config.prefix}help <category> to see the commands`)
     .addField("Moderation", "View all moderation commands.", true)
     .addField("Economy", "View all economy commands.", true)
@@ -18,7 +18,7 @@ function sendModeration(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Moderation commands")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} moderation ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} moderation ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category")
   return message.channel.send(embed);
 }
@@ -27,7 +27,7 @@ function sendEconomy(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Economy commands")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} economy ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} economy ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category")
   return message.channel.send(embed);
 }
@@ -36,7 +36,7 @@ function sendExp(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Experience commands")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} experience ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} experience ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category")
   return message.channel.send(embed);
 }
@@ -45,7 +45,7 @@ function sendBotDev(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Bot developer commands")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} developer ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} developer ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category")
   return message.channel.send(embed);
 }
@@ -54,7 +54,7 @@ function sendMisc(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Miscellaneous commands")
     .setColor(config.mainColor)
-    .setFooter(`${client.user.username} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
+    .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
     .addField(`${config.prefix}ping`, "View respond latency and API latency.", true)
     .addField(`${config.prefix}devmessage`, "Send a message to all developers. (Used for bug reports, suggestions etc.)", true)
   return message.channel.send(embed);

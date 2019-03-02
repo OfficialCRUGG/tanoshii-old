@@ -7,7 +7,7 @@ function sendSuccess(config, client, cmd, author, message) {
   .setTitle("Sent.")
   .setColor(config.mainColor)
   .setDescription("Your message has been sent to the developers.")
-  .setFooter(`${client.user.username} ● ${cmd} ● Requested by ${author.tag}`)
+  .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
   return message.channel.send(embed);
 }
 
@@ -16,7 +16,7 @@ function sendError(config, client, cmd, author, message) {
   .setTitle("An error occured.")
   .setColor(config.mainColor)
   .setDescription("It appears you haven't entered a message.")
-  .setFooter(`${client.user.username} ● ${cmd} ● Requested by ${author.tag}`)
+  .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
   return message.channel.send(embed);
 }
 
@@ -27,7 +27,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
           .setTitle("New Developer Message")
           .setColor(config.mainColor)
           .setDescription("```" + args.join(' ') + "```")
-          .setFooter(`${client.user.username} ● Sent by ${author.tag} ● User ID: ${author.id}`)
+          .setFooter(`${config.name} ● Sent by ${author.tag} ● User ID: ${author.id}`)
           return client.users.get(d).send(embed)
         });
         sendSuccess(config, client, cmd, author, message);
