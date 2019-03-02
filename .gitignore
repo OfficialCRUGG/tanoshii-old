@@ -1,10 +1,23 @@
+# node stuff
 node_modules/
+
+# development stuff
 .idea/
 .vscode/
+
+# bot running stuff
 pids
 *.pid
 *.seed
 *.pid.lock
+
+# logs
 logs
 *.log
+
+# starting tools
+start.bat
+start.sh
+
+# misc
 config.json
