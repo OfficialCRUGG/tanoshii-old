@@ -1,0 +1,17 @@
+{
+    "name": "ManageMe",
+    "prefix": "##",
+    "status": "dnd",
+    "acitivityType": "WATCHING",
+    "acitivityText": "this guild.",
+    "mainColor": "#7289DA",
+    "developers": ["228965621478588416", "224084384054116352"],
+    "token": "___your-token-here___",
+    "database": {
+      "host": "___host1.domain.net___",
+      "username": "___dont-use-root___",
+      "database": "___your-db-name___",
+      "password": "___use-a-secure-password___"
+    }
+
+}
