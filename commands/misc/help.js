@@ -57,6 +57,7 @@ function sendMisc(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
     .addField(`${config.prefix}ping`, "View respond latency and API latency.", true)
     .addField(`${config.prefix}devmessage`, "Send a message to all developers. (Used for bug reports, suggestions etc.)", true)
+    .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
   return message.channel.send(embed);
 }
 
