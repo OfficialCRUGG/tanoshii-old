@@ -1,7 +1,13 @@
 module.exports = async (client) => {
   console.log(`[INFO] ${client.user.username} has succesfully started!`);
-  client.user.setActivity(client.config.acitivityText, {
-    type: client.config.acitivityType
-  });
   client.user.setStatus(`${client.config.status}`);
+  let statuses = [
+    `over ${client.guilds.size} guilds.`,
+    `for ##help`,
+    `over ${client.users.size} users.`
+  ]
+  setInterval(function() {
+    let status = statuses[Math.floor(Math.random() * statuses.length)];
+    client.user.setActivity(status, {type: "WATCHING"})
+  }, 5000)
 };
