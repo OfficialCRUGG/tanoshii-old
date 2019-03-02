@@ -7,4 +7,4 @@ pids
 *.pid.lock
 logs
 *.log
-token.json
+config.json
