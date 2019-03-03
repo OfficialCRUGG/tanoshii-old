@@ -55,7 +55,6 @@ function sendMisc(config, client, cmd, author, message) {
     .setTitle("ManageMe - Miscellaneous commands")
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
-    .addField(`${config.prefix}ping`, "View respond latency and API latency.", true)
     .addField(`${config.prefix}devmessage`, "Send a message to all developers. (Used for bug reports, suggestions etc.)", true)
     .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
     .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
