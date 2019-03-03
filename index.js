@@ -1,7 +1,7 @@
 const config = require("./config.json");
 const Discord = require("discord.js");
 const fs = require("fs");
-const cmdDir = fs.readdirSync("./commands/"");
+const cmdDir = fs.readdirSync("./commands/");
 const client = new Discord.Client({
   disableEveryone: true
 });
