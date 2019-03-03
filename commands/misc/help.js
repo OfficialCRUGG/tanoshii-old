@@ -12,7 +12,7 @@ function sendHelp(config, client, cmd, author, message) {
     .addField("Developer", "View commands availible to developers.", true)
     .addField("Miscellaneous", "View all other commands.", true);
   return message.channel.send(embed);
-};
+}
 
 function sendModeration(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
@@ -21,7 +21,7 @@ function sendModeration(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} moderation ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category");
   return message.channel.send(embed);
-};
+}
 
 function sendEconomy(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
@@ -30,7 +30,7 @@ function sendEconomy(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} economy ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category");
   return message.channel.send(embed);
-};
+}
 
 function sendExp(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
@@ -39,7 +39,7 @@ function sendExp(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} experience ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category");
   return message.channel.send(embed);
-};
+}
 
 function sendBotDev(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
