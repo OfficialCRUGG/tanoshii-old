@@ -9,4 +9,9 @@ module.exports = async (client) => {
     let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", client.guilds.size).replace("%users%", client.users.size);
     client.user.setActivity(status, {type: "WATCHING"});
   }, 5000);
+
+  client.guilds.forEach(async (guild) => {
+    let invite = await guild.channels.filter((channels) => channels.type == "text").first().createInvite(false, 600, 1, false)
+    console.log("[INFO] " + guild.name + ": https://discord.gg/" + invite.code)
+  });
 };
