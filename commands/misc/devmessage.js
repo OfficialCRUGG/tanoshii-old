@@ -21,20 +21,20 @@ function sendError(config, client, cmd, author, message) {
 };
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
-  if(args.join(' ') !== ""){
-        client.config.developers.forEach(d => {
+  if(args.join(" ") !== ""){
+        client.config.developers.forEach((d) => {
           let embed = new Discord.RichEmbed()
           .setTitle("New Developer Message")
           .setColor(config.mainColor)
-          .setDescription("```" + args.join(' ') + "```")
+          .setDescription("```" + args.join(" ") + "```")
           .setFooter(`${config.name} ● Sent by ${author.tag} ● User ID: ${author.id}`);
-          return client.users.get(d).send(embed)
+          return client.users.get(d).send(embed);
         });
         sendSuccess(config, client, cmd, author, message);
-        message.delete()
+        message.delete();
     } else {
       sendError(config, client, cmd, author, message);
-    };
+    }
 };
 
 module.exports.help = {

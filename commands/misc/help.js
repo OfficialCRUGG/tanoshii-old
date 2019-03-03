@@ -63,24 +63,24 @@ function sendMisc(config, client, cmd, author, message) {
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   if (args.length === 0) {
-    return (sendHelp(config, client, cmd, author, message))
+    return (sendHelp(config, client, cmd, author, message));
   } else if (args.length === 1) {
     if (args[0] === "moderation" || args[0] === "mod") {
-      return (sendModeration(config, client, cmd, author, message))
+      return (sendModeration(config, client, cmd, author, message));
     } else if (args[0] === "economy" || args[0] === "eco" || args[0] === "ec") {
-      return (sendEconomy(config, client, cmd, author, message))
+      return (sendEconomy(config, client, cmd, author, message));
     } else if (args[0] === "experience" || args[0] === "xp" || args[0] === "exp") {
-      return (sendExp(config, client, cmd, author, message))
+      return (sendExp(config, client, cmd, author, message));
     } else if (args[0] === "developer" || args[0] === "dev") {
-      return (sendBotDev(config, client, cmd, author, message))
+      return (sendBotDev(config, client, cmd, author, message));
     } else if (args[0] === "miscellaneous" || args[0] === "misc") {
-      return (sendMisc(config, client, cmd, author, message))
+      return (sendMisc(config, client, cmd, author, message));
     } else {
-      return (sendHelp(config, client, cmd, author, message))
+      return (sendHelp(config, client, cmd, author, message));
     };
   } else {
-    return (sendHelp(config, client, cmd, author, message))
-  };
+    return (sendHelp(config, client, cmd, author, message));
+  }
 };
 
 module.exports.help = {
