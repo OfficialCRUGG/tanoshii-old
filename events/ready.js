@@ -3,7 +3,7 @@ module.exports = async (client) => {
   client.user.setStatus(`${client.config.status}`);
   let statuses = [
     `over ${client.guilds.size} guilds.`,
-    `for ##help`,
+    `for ${config.prefix}help`,
     `over ${client.users.size} users.`
   ]
   setInterval(function() {
