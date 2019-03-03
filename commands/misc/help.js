@@ -48,7 +48,7 @@ function sendBotDev(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} developer ● Requested by ${author.tag}`)
     .addField("No commands", "There are currently no commands in this category");
   return message.channel.send(embed);
-};
+}
 
 function sendMisc(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
