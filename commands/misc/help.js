@@ -10,6 +10,7 @@ function sendHelp(config, client, cmd, author, message) {
     .addField("Economy", "View all economy commands.", true)
     .addField("Experience", "View all experience commands.", true)
     .addField("Developer", "View commands availible to developers.", true)
+    .addField("Utility", "View all utility commands.", true)
     .addField("Miscellaneous", "View all other commands.", true);
   return message.channel.send(embed);
 }
@@ -50,6 +51,19 @@ function sendBotDev(config, client, cmd, author, message) {
   return message.channel.send(embed);
 }
 
+function sendUtils(config, client, cmd, author, message) {
+  let embed = new Discord.RichEmbed()
+    .setTitle("ManageMe - Utility commands")
+    .setColor(config.mainColor)
+    .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
+    .addField(`${config.prefix}dog`, "Sends a random dog picture", true)
+    .addField(`${config.prefix}cat`, "Sends a random cat picture", true)
+    .addField(`${config.prefix}bunny`, "Sends a random bunny picture", true)
+    .addField(`${config.prefix}urban`, "Searches Urban Dictionary for a specified phrase", true)
+    .addField(`${config.prefix}randomurban`, "Searches Urban Dictionary for a random phrase", true);
+  return message.channel.send(embed);
+}
+
 function sendMisc(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()
     .setTitle("ManageMe - Miscellaneous commands")
@@ -59,7 +73,8 @@ function sendMisc(config, client, cmd, author, message) {
     .addField(`${config.prefix}botinfo`, "Displays info about the bot", true)
     .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
     .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
-    .addField(`${config.prefix}isgd`, "Shortens a link for you", true);
+    .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
+    .addField(`${config.prefix}guildinfo`, "Shows information about the guild.", true);
   return message.channel.send(embed);
 }
 
@@ -75,6 +90,8 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
       return (sendExp(config, client, cmd, author, message));
     } else if (args[0] === "developer" || args[0] === "dev") {
       return (sendBotDev(config, client, cmd, author, message));
+    } else if (args[0] === "utility" || args[0] === "utils" || args[0] === "utilities" || args[0] === "util") {
+      return (sendUtils(config, client, cmd, author, message));
     } else if (args[0] === "miscellaneous" || args[0] === "misc") {
       return (sendMisc(config, client, cmd, author, message));
     } else {
