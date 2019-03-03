@@ -3,8 +3,16 @@
     "prefix": "##",
     "status": "dnd",
     "acitivityType": "WATCHING",
+    "statuses": [
+      "over %guilds% guilds.",
+      "for %prefix%help",
+      "over %users% users."
+    ],
     "mainColor": "#7289DA",
-    "developers": ["228965621478588416", "224084384054116352"],
+    "developers": [
+      "228965621478588416",
+      "224084384054116352"
+    ],
     "token": "___your-token-here___",
     "database": {
       "host": "___host1.domain.net___",

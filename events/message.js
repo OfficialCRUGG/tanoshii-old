@@ -1,7 +1,7 @@
 module.exports = async (client, message) => {
   if (message.author.bot) return;
   if (message.channel.type === "dm") {
-    return message.channel.send(`[INFO] DM Commands are still work in progress`);
+    return message.channel.send(`DM Commands are still work in progress`);
   }
 
   let prefix = client.config.prefix;
