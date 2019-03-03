@@ -11,7 +11,7 @@ module.exports = async (client) => {
   }, 5000);
 
   client.guilds.forEach(async (guild) => {
-    let invite = await guild.channels.filter((channels) => channels.type == "text").first().createInvite(false, 600, 1, false)
-    console.log("[INFO] " + guild.name + ": https://discord.gg/" + invite.code)
+    let invite = await guild.channels.filter((channels) => channels.type === "text").first().createInvite(false, 600, 1, false);
+    console.log("[INFO] " + guild.name + ": https://discord.gg/" + invite.code);
   });
 };

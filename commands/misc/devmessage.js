@@ -9,7 +9,7 @@ function sendSuccess(config, client, cmd, author, message) {
   .setDescription("Your message has been sent to the developers.")
   .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`);
   return message.channel.send(embed);
-};
+}
 
 function sendError(config, client, cmd, author, message) {
   let embed = new Discord.RichEmbed()

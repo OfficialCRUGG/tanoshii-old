@@ -1,9 +1,9 @@
 // Uptime & ping code by Yui Bot https://github.com/Newtox/Yui/blob/master/commands/botinfo.js
 const Discord = require("discord.js");
-const ping = require("ping")
+const ping = require("ping");
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
-    ping.promise.probe('discordapp.com').then(result => {
+    ping.promise.probe("discordapp.com").then((result) => {
 
     let t = new Date(client.uptime);
     let months = t.getUTCMonth();

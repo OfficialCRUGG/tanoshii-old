@@ -61,7 +61,7 @@ function sendMisc(config, client, cmd, author, message) {
     .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
     .addField(`${config.prefix}isgd`, "Shortens a link for you", true);
   return message.channel.send(embed);
-};
+}
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   if (args.length === 0) {

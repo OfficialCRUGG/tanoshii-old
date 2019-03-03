@@ -13,11 +13,11 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   .addField("Created at", message.guild.createdAt, true)
   .addField("Guild id", message.guild.id, true)
   .addField("Member count", message.guild.memberCount, true)
-  .addField("Guild owner", message.guild.owner.user.tag, true)
+  .addField("Guild owner", message.guild.owner.user.tag, true);
   if(message.guild.region === "eu-central") {
-    embed.addField("Region", "Europe Central", true)
+    embed.addField("Region", "Europe Central", true);
   } else {
-    embed.addField("Region", message.guild.region, true)
+    embed.addField("Region", message.guild.region, true);
   }
   return message.channel.send(embed);
 };
