@@ -18,7 +18,7 @@ function sendError(config, client, cmd, author, message) {
   .setDescription("It appears you haven't entered a message.")
   .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`);
   return message.channel.send(embed);
-};
+}
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   if(args.join(" ") !== ""){

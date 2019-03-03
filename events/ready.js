@@ -8,5 +8,5 @@ module.exports = async (client) => {
     let statusRaw = statuses[Math.floor(Math.random() * statuses.length)];
     let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", client.guilds.size).replace("%users%", client.users.size);
     client.user.setActivity(status, {type: "WATCHING"});
-  }, 5000)
+  }, 5000);
 };

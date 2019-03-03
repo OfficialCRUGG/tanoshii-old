@@ -77,7 +77,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
       return (sendMisc(config, client, cmd, author, message));
     } else {
       return (sendHelp(config, client, cmd, author, message));
-    };
+    }
   } else {
     return (sendHelp(config, client, cmd, author, message));
   }
