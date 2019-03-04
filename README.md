@@ -1,23 +1,14 @@
-# ManageMe
-### Moderate your server with many features.
+# Tanoshi 楽しい
+### Many awesome fun commands.
 **This bot is still in development**
 
 ## Introduction
-ManageMe is an open source bot which will contain lots of features. It is still in development though, so it doesn't have that many features.
-
-## Commands
-| Command      | Category      | Description                                                                                         | Syntax                    |
-|--------------|---------------|-----------------------------------------------------------------------------------------------------|---------------------------|
-| ##devmessage | Miscellaneous | Send a message to all developers (Used for bug reports, suggestions etc.)  [Abuse will be punished] | ##devmessage \<Message>   |
-| ##botinfo    | Miscellaneous | Displays info about the bot                                                                         | ##botinfo                 |
-| ##gtfm       | Miscellaneous | Google that for me (If you're too lazy to google)                                                   | ##gtfm \<Search phrase>   |
-| ##lmgtfy     | Miscellaneous | Let me google that for you (If someone else is too lazy to google)                                  | ##lmgtfy \<Search phrase> |
-| ##isgd       | Miscellaneous | Shortens a link for you                                                                             | ##isgd \<URL>             |
+Tanoshi 楽しい is an open source bot which will contain lots of features. It is still in development though, so it doesn't have that many features.
 
 ## Todo
 Theese things are confirmed and will be part of the bot soon:
 * Moderation commands
-	* ManageMe is going to feature lots of moderation commands which would include ban, kick, softban, unban, mute, unmute, purge & much more.
+	* Tanoshi 楽しい is going to feature lots of moderation commands which would include ban, kick, softban, unban, mute, unmute, purge & much more.
 * Fun commands
 	* The bot will have fun commands like "mcachievement", "randommeme" and commands for specific subreddits like "woosh" & "entitledparents"
 * Economy system
