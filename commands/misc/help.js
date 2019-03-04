@@ -48,7 +48,7 @@ function sendBotDev(config, client, cmd, author, message) {
     .setTitle(`${config.name} - Bot developer commands`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} developer ● Requested by ${author.tag}`)
-    .addField("No commands", "There are currently no commands in this category");
+    .addField(`${config.prefix}update`, "Update the bot", true)
   return message.channel.send(embed);
 }
 
