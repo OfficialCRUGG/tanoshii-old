@@ -68,6 +68,9 @@ function sendUtils(config, client, cmd, author, message) {
     .setTitle("ManageMe - Utility commands")
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} utility ● Requested by ${author.tag}`)
+    .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
+    .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
+    .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
     .addField(`${config.prefix}urban`, "Searches Urban Dictionary for a specified phrase", true)
     .addField(`${config.prefix}randomurban`, "Searches Urban Dictionary for a random phrase", true);
   return message.channel.send(embed);
@@ -80,9 +83,6 @@ function sendMisc(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
     .addField(`${config.prefix}devmessage`, "Send a message to all developers (Used for bug reports, suggestions etc.)", true)
     .addField(`${config.prefix}botinfo`, "Displays info about the bot", true)
-    .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
-    .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
-    .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
     .addField(`${config.prefix}guildinfo`, "Shows information about the guild.", true);
   return message.channel.send(embed);
 }
