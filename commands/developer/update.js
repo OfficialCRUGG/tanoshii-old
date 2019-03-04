@@ -28,7 +28,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author
         else {
           let emb3 = new RichEmbed()
           .setTitle(`Update failed`)
-          .setDescription(`There was an error\n${out}\n${stderr}`);
+          .setDescription(`There was an error trying to pull update.\n${out}\n${stderr}`);
           msg.channel.send(emb3);
         }
     })
