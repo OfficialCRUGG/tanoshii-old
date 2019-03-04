@@ -7,7 +7,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   let file = (await snek.get(api)).body.url;
   let title = (await snek.get(api)).body.url;
   let source = (await snek.get(api)).body.sourceLink;
-  let source = (await snek.get(amount)).body;
+  let amount = (await snek.get(amount)).body;
   if(!file){
     return message.channel.send("The API of crugg.de is not reachable")
   };
