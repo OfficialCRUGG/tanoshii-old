@@ -14,9 +14,9 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   };
   let embed = new Discord.RichEmbed()
   .setTitle(title)
-  .setDescription("Showing one out of " + amount + " cute pet pictures from [CRUGG's API](http://api.crugg.de:3000).")
+  .setDescription("Showing one out of " + amount + " cute pet pictures from [CRUGG's api](http://api.crugg.de:3000).")
   .setColor(config.mainColor)
-  .setFooter(`Powered by crugg.de ● Requested by ${author.tag}`)
+  .setFooter(`Powered by api.crugg.de:3000 ● Requested by ${author.tag}`)
   .setImage(file)
   .setURL(source);
   return message.channel.send(embed)
