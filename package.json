@@ -25,6 +25,7 @@
     "sequelize": "^4.42.0",
     "snekfetch": "^4.0.4",
     "strict-uri-encode": "^2.0.0",
+    "systeminformation": "^4.0.15",
     "urban": "^0.3.2"
   }
 }
