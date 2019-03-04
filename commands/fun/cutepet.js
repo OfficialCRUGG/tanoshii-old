@@ -1,12 +1,13 @@
 const Discord = require("discord.js");
 const snek = require("snekfetch");
-const api = "http://api.crugg.de:3000/cute/random";
-const amountapi = "http://api.crugg.de:3000/cute/amount";
+const api = "http://api.crugg.de:3000/cutepet/random";
+const amountapi = "http://api.crugg.de:3000/cutepet/amount";
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
-  let file = (await snek.get(api)).body.url;
-  let title = (await snek.get(api)).body.title;
-  let source = (await snek.get(api)).body.sourceLink;
+  let sneked = (await snek.get(api))
+  let file = sneked.body.url;
+  let title = sneked.body.title;
+  let source = sneked.body.sourceLink;
   let amount = (await snek.get(amountapi)).body;
   if(!file){
     return message.channel.send("The API of crugg.de is not reachable")
@@ -21,5 +22,5 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   return message.channel.send(embed)
 };
 module.exports.help = {
-  name: "cute"
+  name: "cutepet"
 }

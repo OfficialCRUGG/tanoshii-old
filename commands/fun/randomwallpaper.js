@@ -4,12 +4,13 @@ const api = "https://api.desktoppr.co/1/wallpapers/random";
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   let msg = await message.channel.send(client.emojis.get("535484057497108482") + " Finding random wallpaper...")
-  let file = (await snek.get(api)).body.response.image.url;
-  let link = (await snek.get(api)).body.response.url;
-  let uploader = (await snek.get(api)).body.response.uploader;
-  let likes = (await snek.get(api)).body.response.likes_count;
-  let height = (await snek.get(api)).body.response.height;
-  let width = (await snek.get(api)).body.response.width;
+  let sneked = (await snek.get(api));
+  let file = sneked.body.response.image.url;
+  let link = sneked.body.response.url;
+  let uploader = sneked.body.response.uploader;
+  let likes = sneked.body.response.likes_count;
+  let height = sneked.body.response.height;
+  let width = sneked.body.response.width;
   if(!file){
     return message.channel.send("The API of desktoppr.co is not reachable")
   };
