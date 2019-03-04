@@ -58,6 +58,7 @@ function sendFun(config, client, cmd, author, message) {
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} fun ● Requested by ${author.tag}`)
     .addField(`${config.prefix}dog`, "Sends a random dog picture", true)
+    .addField(`${config.prefix}fox`, "Sends a random fox picture", true)
     .addField(`${config.prefix}cat`, "Sends a random cat picture", true)
     .addField(`${config.prefix}bunny`, "Sends a random bunny picture", true)
     .addField(`${config.prefix}catface`, "Sends a ascii cat face", true)
@@ -72,6 +73,7 @@ function sendUtils(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} utility ● Requested by ${author.tag}`)
     .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
     .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
+    .addField(`${config.prefix}text2qr`, "Converts any string of text to a qr code", true)
     .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
     .addField(`${config.prefix}urban`, "Searches Urban Dictionary for a specified phrase", true)
     .addField(`${config.prefix}randomurban`, "Searches Urban Dictionary for a random phrase", true);
