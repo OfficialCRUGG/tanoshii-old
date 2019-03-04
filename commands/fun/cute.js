@@ -1,13 +1,13 @@
 const Discord = require("discord.js");
 const snek = require("snekfetch");
 const api = "http://api.crugg.de:3000/cute/random";
-const amount = "http://api.crugg.de:3000/cute/amount";
+const amountapi = "http://api.crugg.de:3000/cute/amount";
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   let file = (await snek.get(api)).body.url;
   let title = (await snek.get(api)).body.url;
   let source = (await snek.get(api)).body.sourceLink;
-  let amount = (await snek.get(amount)).body;
+  let amount = (await snek.get(amountapi)).body;
   if(!file){
     return message.channel.send("The API of crugg.de is not reachable")
   };
