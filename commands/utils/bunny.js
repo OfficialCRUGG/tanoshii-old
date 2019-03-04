@@ -3,20 +3,16 @@ const snek = require("snekfetch");
 const api = "https://api.bunnies.io/v2/loop/random/?media=gif";
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
-  let msg = await message.channel.send("Finding random bunny picture... (If there is still nothing sent after 5-10 seconds, try again)");
   let file = (await snek.get(api)).body.media.gif;
   if(!file){
-    message.delete();
     return message.channel.send("The API of bunnies.io is not reachable")
   };
-
-  await message.channel.send({files: [
-    {
-      attachment: file,
-      name: file.split("/").pop()
-    }
-  ]});
-  msg.delete();
+  let embed = new Discord.RichEmbed()
+  .setTitle("ManageMe - Bunny")
+  .setColor(config.mainColor)
+  .setFooter(`Powered by bunnies.io ● Requested by ${author.tag}`)
+  .setImage(file);
+  return message.channel.send(embed)
 };
 module.exports.help = {
   name: "bunny"
