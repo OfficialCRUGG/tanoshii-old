@@ -1,4 +1,4 @@
-# Tanoshi 楽しい
+# Tanoshii 楽しい
 ### Many awesome fun commands.
 **This bot is still in development**
 
@@ -8,7 +8,7 @@ Tanoshi 楽しい is an open source bot which will contain lots of features. It 
 ## Todo
 Theese things are confirmed and will be part of the bot soon:
 * Moderation commands
-	* Tanoshi 楽しい is going to feature lots of moderation commands which would include ban, kick, softban, unban, mute, unmute, purge & much more.
+	* Tanoshii is going to feature lots of moderation commands which would include ban, kick, softban, unban, mute, unmute, purge & much more.
 * Fun commands
 	* The bot will have fun commands like "mcachievement", "randommeme" and commands for specific subreddits like "woosh" & "entitledparents"
 * Economy system
