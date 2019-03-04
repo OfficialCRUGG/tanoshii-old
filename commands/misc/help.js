@@ -57,6 +57,7 @@ function sendFun(config, client, cmd, author, message) {
     .setTitle(`${config.name} - Fun commands`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} fun ● Requested by ${author.tag}`)
+    .addField(`${config.prefix}cute`, "Sends a random cute pet picture", true)
     .addField(`${config.prefix}dog`, "Sends a random dog picture", true)
     .addField(`${config.prefix}fox`, "Sends a random fox picture", true)
     .addField(`${config.prefix}cat`, "Sends a random cat picture", true)
