@@ -74,6 +74,7 @@ function sendUtils(config, client, cmd, author, message) {
     .addField(`${config.prefix}gtfm`, "Google that for me (If you're too lazy to google)", true)
     .addField(`${config.prefix}lmgtfy`, "Let me google that for you (If someone else is too lazy to google)", true)
     .addField(`${config.prefix}text2qr`, "Converts any string of text to a qr code", true)
+    .addField(`${config.prefix}qr2text`, "Converts any url to an image file with an qr code to a text", true)
     .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
     .addField(`${config.prefix}urban`, "Searches Urban Dictionary for a specified phrase", true)
     .addField(`${config.prefix}randomurban`, "Searches Urban Dictionary for a random phrase", true);
