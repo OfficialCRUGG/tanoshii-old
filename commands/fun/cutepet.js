@@ -1,7 +1,7 @@
 const Discord = require("discord.js");
 const snek = require("snekfetch");
-const api = "http://api.crugg.de:3000/cutepet/random";
-const amountapi = "http://api.crugg.de:3000/cutepet/amount";
+const api = "http://api.crugg.de:3000/cutepets/random";
+const amountapi = "http://api.crugg.de:3000/cutepets/amount";
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   let sneked = (await snek.get(api))
