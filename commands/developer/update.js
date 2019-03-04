@@ -11,7 +11,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author
         .setDescription("Updating...");
 
     msg.channel.send(emb);
-    client.user.setPresence({status: "online", game: {name: "Applying an update."}});
+    client.user.setPresence({status: "away", game: {name: "Updating..."}});
 
     exec("git pull", (err, out, stderr) => {
         if(!err && stderr === ""){
