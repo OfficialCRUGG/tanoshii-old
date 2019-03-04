@@ -10,11 +10,11 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   let source = sneked.body.sourceLink;
   let amount = (await snek.get(amountapi)).body;
   if(!file){
-    return message.channel.send("The API of crugg.de is not reachable")
+    return message.channel.send("The Api of crugg.de is not reachable")
   };
   let embed = new Discord.RichEmbed()
   .setTitle(title)
-  .setDescription("Showing one out of " + amount + " cute pet pictures from [CRUGG's api](http://api.crugg.de:3000).")
+  .setDescription("Showing one out of " + amount + " cute pet pictures from [CRUGG's Api](http://api.crugg.de:3000).")
   .setColor(config.mainColor)
   .setFooter(`Powered by crugg.de ● Requested by ${author.tag}`)
   .setImage(file)
