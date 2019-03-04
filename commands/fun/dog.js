@@ -8,7 +8,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     return message.channel.send("The API of random.dog is not reachable")
   };
   let embed = new Discord.RichEmbed()
-  .setTitle("ManageMe - Dog")
+  .setTitle(`${config.name} - Dog`)
   .setColor(config.mainColor)
   .setFooter(`Powered by random.dog ● Requested by ${author.tag}`)
   .setImage(file);

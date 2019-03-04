@@ -5,7 +5,7 @@ const api = "https://nekos.life/api/v2/8ball";
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
   if(args.length < 1) {
     let embed = new Discord.RichEmbed()
-    .setTitle("ManageMe")
+    .setTitle(config.name)
     .setColor(config.mainColor)
     .setFooter(`Powered by nekos.life ● Requested by ${author.tag}`)
     .setDescription("Please enter a question.")
@@ -16,7 +16,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
       return message.channel.send("The API of nekos.life is not reachable")
     };
     let embed = new Discord.RichEmbed()
-    .setTitle("ManageMe - 8 Ball")
+    .setTitle(`${config.name} - 8 Ball`)
     .setColor(config.mainColor)
     .setFooter(`Powered by nekos.life ● Requested by ${author.tag}`)
     .setDescription("You: " + args.join(" ") + "\nMagic 8 Ball:")

@@ -8,7 +8,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     return message.channel.send("The API of bunnies.io is not reachable")
   };
   let embed = new Discord.RichEmbed()
-  .setTitle("ManageMe - Bunny")
+  .setTitle(`${config.name} - Bunny`)
   .setColor(config.mainColor)
   .setFooter(`Powered by bunnies.io ● Requested by ${author.tag}`)
   .setImage(file);

@@ -8,7 +8,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     return message.channel.send("The API of nekos.life is not reachable")
   };
   let embed = new Discord.RichEmbed()
-  .setTitle("ManageMe - Catface")
+  .setTitle(`${config.name} - Catface`)
   .setColor(config.mainColor)
   .setFooter(`Powered by nekos.life ● Requested by ${author.tag}`)
   .setDescription("```" + catface + "```");

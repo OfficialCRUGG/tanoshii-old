@@ -14,10 +14,10 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     let uptime = `**${months}**mo, **${days}**d, **${hours}**h, **${minutes}**m, **${seconds}**s`;
 
     let embed = new Discord.RichEmbed()
-      .setTitle("ManageMe - Bot Info")
+      .setTitle(`${config.name} - Bot Info`)
       .setColor(config.mainColor)
       .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
-      .setDescription("[GitHub Repo](https://github.com/mm-discord/manageme/) | [Releases](http://files.manageme.ga/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
+      .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
       .addField("Bot", `**${client.user.username}**#${client.user.discriminator}`, true)
       .addField("Client ID", `${client.user.id}`, true)
       .addField("Developers", "**CRUGG**#0001 & **Ron31**#2338", false)
