@@ -60,6 +60,8 @@ function sendFun(config, client, cmd, author, message) {
     .addField(`${config.prefix}dog`, "Sends a random dog picture", true)
     .addField(`${config.prefix}cat`, "Sends a random cat picture", true)
     .addField(`${config.prefix}bunny`, "Sends a random bunny picture", true)
+    .addField(`${config.prefix}catface`, "Sends a ascii cat face", true)
+    .addField(`${config.prefix}8ball`, "Answers every question", true)
   return message.channel.send(embed);
 }
 
