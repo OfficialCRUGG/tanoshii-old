@@ -21,7 +21,7 @@ function sendModeration(config, client, cmd, author, message) {
     .setTitle(`${config.name} - Moderation commands`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} moderation ● Requested by ${author.tag}`)
-    .addField("No commands", "There are currently no commands in this category");
+    .addField(`${config.prefix}purge`, "Deleted a set amount of messages (2-100)", true)
   return message.channel.send(embed);
 }
 
