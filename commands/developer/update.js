@@ -5,10 +5,11 @@ const { RichEmbed } = require("discord.js");
 const fs = require("fs");
 
 module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author, guild, config) => {
-  if(author.id = "228965621478588416" || "224084384054116352") {
+  if(config.developers.includes(author.id)) {
     let emb = new RichEmbed()
         .setTitle(`Update initiated by ${msg.author.tag}`)
-        .setDescription("Updating...");
+        .setDescription("Updating...")
+        .setColor(config.mainColor);
 
     msg.channel.send(emb);
     client.user.setPresence({status: "away", game: {name: "Updating..."}});
@@ -20,18 +21,25 @@ module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author
                 if(err && stderr !== "") {
                   let emb2 = new RichEmbed()
                   .setTitle(`Update failed`)
-                  .setDescription(`There was an error\n${out}\n${stderr}`);
+                  .setDescription(`There was an error\n${out}\n${stderr}`)
+                  .setColor(config.mainColor);
                   msg.channel.send(emb2);
                 }
             })
         }
         else {
           let emb3 = new RichEmbed()
-          .setTitle(`Update failed`)
+          .setTitle(`Update`)
           .setDescription(`Output whilst trying to update:\n${out}\n${stderr}\n\nPlease re-run the update command.`);
           msg.channel.send(emb3);
         }
     })
+  } else {
+    let emb4 = new RichEmbed()
+    .setTitle("No Permissions")
+    .setDescription("You don't have permissions to execute that command.")
+    .setColor(config.mainColor);
+    msg.channel.send(emb4);
   }
 };
 
