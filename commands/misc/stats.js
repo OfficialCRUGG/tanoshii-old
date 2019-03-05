@@ -6,7 +6,7 @@ const Discord = require("discord.js");
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
 
     let embed = new Discord.RichEmbed()
-    .setTitle(`${config.name} - Bot Info`)
+    .setTitle(`${config.name} - Stats`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
     .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
