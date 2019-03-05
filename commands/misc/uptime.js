@@ -1,10 +1,6 @@
 // Uptime code by Yui Bot https://github.com/Newtox/Yui/blob/master/commands/botinfo.js
 // We don't just copy & paste code from other bot. We looked at the coded and used them to learn how to do stuff, we then coded the things ourself. I'd still like to credit them.
 const Discord = require("discord.js");
-const os = require("os");
-//const sysi = require("systeminformation");
-const ping = require("ping");
-const packages = require("../../package.json");
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
 
@@ -26,5 +22,5 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
 };
 
 module.exports.help = {
-  name: "botinfo"
+  name: "uptime"
 };
