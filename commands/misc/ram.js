@@ -15,5 +15,5 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
 };
 
 module.exports.help = {
-  name: "botinfo"
+  name: "ram"
 };
