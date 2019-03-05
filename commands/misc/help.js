@@ -90,12 +90,12 @@ function sendMisc(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} miscellaneous ● Requested by ${author.tag}`)
     .addField(`${config.prefix}devmessage`, "Send a message to all developers (Used for bug reports, suggestions etc.)", true)
     .addField(`${config.prefix}botinfo`, "Displays info about the bot", true)
-    .addField(`${config.prefix}credits`, "List all bot credits.", true);
-    .addField(`${config.prefix}dependencies`, "List all bot dependencies (dynamic).", true);
-    .addField(`${config.prefix}ping`, "Show the ping of the bot.", true);
-    .addField(`${config.prefix}ram`, "Shows the current RAM Usage of all Bots.", true);
-    .addField(`${config.prefix}stats`, "Shows some statistics.", true);
-    .addField(`${config.prefix}uptime`, "Shows the uptime of the bot.", true);
+    .addField(`${config.prefix}credits`, "List all bot credits.", true)
+    .addField(`${config.prefix}dependencies`, "List all bot dependencies (dynamic).", true)
+    .addField(`${config.prefix}ping`, "Show the ping of the bot.", true)
+    .addField(`${config.prefix}ram`, "Shows the current RAM Usage of all Bots.", true)
+    .addField(`${config.prefix}stats`, "Shows some statistics.", true)
+    .addField(`${config.prefix}uptime`, "Shows the uptime of the bot.", true)
     .addField(`${config.prefix}guildinfo`, "Shows information about the guild.", true);
   return message.channel.send(embed);
 }
