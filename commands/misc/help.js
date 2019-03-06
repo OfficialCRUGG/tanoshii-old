@@ -58,6 +58,7 @@ function sendFun(config, client, cmd, author, message) {
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} fun ● Requested by ${author.tag}`)
     .addField(`${config.prefix}cutepet`, "Sends a random cute pet picture", true)
+    .addField(`${config.prefix}neko`, "NSFW | Shows picture of a neko (no nudity)", true)
     .addField(`${config.prefix}dog`, "Sends a random dog picture", true)
     .addField(`${config.prefix}fox`, "Sends a random fox picture", true)
     .addField(`${config.prefix}cat`, "Sends a random cat picture", true)
@@ -78,8 +79,8 @@ function sendUtils(config, client, cmd, author, message) {
     .addField(`${config.prefix}text2qr`, "Converts any string of text to a qr code", true)
     .addField(`${config.prefix}qr2text`, "Converts any url to an image file with an qr code to a text", true)
     .addField(`${config.prefix}isgd`, "Shortens a link for you", true)
-    .addField(`${config.prefix}urban`, "Searches Urban Dictionary for a specified phrase", true)
-    .addField(`${config.prefix}randomurban`, "Searches Urban Dictionary for a random phrase", true);
+    .addField(`${config.prefix}urban`, "NSFW | Searches Urban Dictionary for a specified phrase", true)
+    .addField(`${config.prefix}randomurban`, "NSFW | Searches Urban Dictionary for a random phrase", true);
   return message.channel.send(embed);
 }
 
