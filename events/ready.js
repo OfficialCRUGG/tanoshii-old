@@ -14,7 +14,7 @@ module.exports = async (client) => {
   .setTitle("Bot started")
   .setColor(config.mainColor)
   .setDescription("Tanoshii has started.")
-  .setFooter({config.name);
+  .setFooter(config.name);
   client.users.get("228965621478588416").send(embed);
 
   let guilds = "";
