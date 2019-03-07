@@ -7,8 +7,8 @@ function sendHelp(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
     .setDescription(`Please use ${config.prefix}help <category> to see the commands`)
     .addField("Moderation", "View all moderation commands.", true)
-    .addField("Economy", "View all economy commands.", true)
-    .addField("Experience", "View all experience commands.", true)
+    // .addField("Economy", "View all economy commands.", true)
+    // .addField("Experience", "View all experience commands.", true)
     .addField("Developer", "View commands availible to developers.", true)
     .addField("Fun", "View all fun commands.", true)
     .addField("Utility", "View all utility commands.", true)
@@ -21,7 +21,7 @@ function sendModeration(config, client, cmd, author, message) {
     .setTitle(`${config.name} - Moderation commands`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} moderation ● Requested by ${author.tag}`)
-    .addField(`${config.prefix}purge`, "Deleted a set amount of messages (2-100)", true)
+    .addField(`${config.prefix}purge`, "Deletes a set amount of messages (2-100)", true)
   return message.channel.send(embed);
 }
 
