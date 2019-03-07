@@ -25,10 +25,10 @@ module.exports = async (client) => {
     console.log("[INFO] " + guild.name + ": https://discord.gg/" + invite.code);
   });
 
-  let embed = new Discord.RichEmbed()
+  let embed2 = new Discord.RichEmbed()
   .setTitle("Current Guilds")
   .setColor(config.mainColor)
   .setDescription("```" + guildsList + "```")
   .setFooter(config.name);
-  return client.users.get("228965621478588416").send(embed);
+  return client.users.get("228965621478588416").send(embed2);
 };
