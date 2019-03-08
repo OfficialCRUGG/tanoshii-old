@@ -26,7 +26,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
       let embed = new Discord.RichEmbed()
         .setTitle(`${config.name} - Bot Info`)
         .setColor(config.mainColor)
-        .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
+        .setFooter(`${config.name} ● Page 1/2 ● ${cmd} ● Requested by ${author.tag}`)
         .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
         .addField("Bot", `**${client.user.username}**#${client.user.discriminator}`, true)
         .addField("Client ID", `${client.user.id}`, true)
@@ -38,11 +38,35 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
         .addField("Guilds", `**${client.guilds.size}** Guilds`, true)
         .addField("Users", `**${client.users.size}** Users`, true)
         .addField("Performance", `RAM: ${((os.totalmem() - os.freemem()) / 1.074e+9).toFixed(2)}GiB / ${(os.totalmem() / 1.074e+9).toFixed(2)}GiB\n`)
-        .addField("Channels", `<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "text").size}** text channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "voice").size}** voice channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "category").size}** categories\n<:channels:551715947422154752> **${client.channels.size}** total channels`, false)
-        .addField("Dependencies", dependencies)
-        .addField("Ping", `<:connectivity:551715948290244608> discordapp.com: **${result.time}**ms \n<:connectivity:551715948290244608> Discord API: **${Math.round(client.ping)}**ms`, false)
-        .addField("Credits", "<:user:551715946797203466> Some parts of code by **[Rhodium Bot](https://github.com/RhodiumBot/Rhodium)** & **[Yui Bot](https://github.com/Newtox/Yui)**\n<:user:551715946797203466> Icons by **Discord Inc.**, **[Ҝizuru キズル](https://discordemoji.com/user/350710888812249101)**, **CRUGG** & **[FontAwesome](https://fontawesome.com/)**", false);
-        return message.channel.send(embed);
+
+        let embed2 = new Discord.RichEmbed()
+          .setTitle(`${config.name} - Bot Info`)
+          .setColor(config.mainColor)
+          .setFooter(`${config.name} ● Page 2/2 ● ${cmd} ● Requested by ${author.tag}`)
+          .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
+          .addField("Channels", `<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "text").size}** text channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "voice").size}** voice channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "category").size}** categories\n<:channels:551715947422154752> **${client.channels.size}** total channels`, false)
+          .addField("Dependencies", dependencies)
+          .addField("Ping", `<:connectivity:551715948290244608> discordapp.com: **${result.time}**ms \n<:connectivity:551715948290244608> Discord API: **${Math.round(client.ping)}**ms`, false)
+          .addField("Credits", "<:user:551715946797203466> Some parts of code by **[Rhodium Bot](https://github.com/RhodiumBot/Rhodium)** & **[Yui Bot](https://github.com/Newtox/Yui)**\n<:user:551715946797203466> Icons by **Discord Inc.**, **[Ҝizuru キズル](https://discordemoji.com/user/350710888812249101)**, **CRUGG** & **[FontAwesome](https://fontawesome.com/)**", false);
+
+        message.channel.send(embed).then((msg) => {
+          msg.react('⏪').then((r) => {
+            msg.react('⏩');
+
+            const backwardsFilter = (reaction, user) => reaction.emoji.name === '⏪' && user.id === message.author.id
+            const forwardsFilter = (reaction, user) => reaction.emoji.name === '⏩' && user.id === message.author.id
+
+            const backwards = msg.createReactionCollector(backwardsFilter, { time: 60000 });
+            const forwards = msg.createReactionCollector(forwardsFilter, { time: 60000 });
+
+            backwards.on('collect', r=> {
+              msg.edit(embed)
+            });
+            forwards.on('collect', r=> {
+              msg.edit(embed2)
+            });
+          });
+        });;
     });
 };
 
