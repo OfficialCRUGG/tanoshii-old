@@ -3,9 +3,11 @@
 // We don't just copy & paste code from other bot. We looked at the coded and used them to learn how to do stuff, we then coded the things ourself. I'd still like to credit them.
 const Discord = require("discord.js");
 const os = require("os");
-//const sysi = require("systeminformation");
 const ping = require("ping");
 const packages = require("../../package.json");
+
+// Utils
+const numbers = require("../../utils/numbers.js")
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
     ping.promise.probe("discordapp.com").then((result) => {
@@ -35,8 +37,8 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
         .addField("Uptime", uptime, true)
         .addField("node.js Version", process.version, true)
         .addField("Development Software", "**Atom** (CRUGG & Katze), **JetBrains WebStorm** (Ron31)", false)
-        .addField("Guilds", `**${client.guilds.size}** Guilds`, true)
-        .addField("Users", `**${client.users.size}** Users`, true)
+        .addField("Guilds", `**${numbers.data.numberWithCommas(client.guilds.size)}** Guilds`, true)
+        .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)
         .addField("Performance", `RAM: ${((os.totalmem() - os.freemem()) / 1.074e+9).toFixed(2)}GiB / ${(os.totalmem() / 1.074e+9).toFixed(2)}GiB\n`)
 
         let embed2 = new Discord.RichEmbed()
@@ -44,7 +46,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
           .setColor(config.mainColor)
           .setFooter(`${config.name} ● Page 2/2 ● ${cmd} ● Requested by ${author.tag}`)
           .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
-          .addField("Channels", `<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "text").size}** text channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "voice").size}** voice channels\n<:channels:551715947422154752> **${client.channels.filter((channels) => channels.type === "category").size}** categories\n<:channels:551715947422154752> **${client.channels.size}** total channels`, false)
+          .addField("Channels", `<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "text").size)}** text channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "voice").size)}** voice channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "category").size)}** categories\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.size)}** total channels`, false)
           .addField("Dependencies", dependencies)
           .addField("Ping", `<:connectivity:551715948290244608> discordapp.com: **${result.time}**ms \n<:connectivity:551715948290244608> Discord API: **${Math.round(client.ping)}**ms`, false)
           .addField("Credits", "<:user:551715946797203466> Some parts of code by **[Rhodium Bot](https://github.com/RhodiumBot/Rhodium)** & **[Yui Bot](https://github.com/Newtox/Yui)**\n<:user:551715946797203466> Icons by **Discord Inc.**, **[Ҝizuru キズル](https://discordemoji.com/user/350710888812249101)**, **CRUGG** & **[FontAwesome](https://fontawesome.com/)**", false);

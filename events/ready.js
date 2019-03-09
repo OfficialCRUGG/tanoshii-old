@@ -1,5 +1,6 @@
 const config = require("../config.json");
 const Discord = require("discord.js");
+const numbers = require("../utils/numbers.js")
 
 module.exports = async (client) => {
   console.log(`[INFO] ${client.user.username} has succesfully started!`);
@@ -7,7 +8,7 @@ module.exports = async (client) => {
   let statuses = config.statuses;
   setInterval(function() {
     let statusRaw = statuses[Math.floor(Math.random() * statuses.length)];
-    let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", client.guilds.size).replace("%users%", client.users.size);
+    let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", numbers.data.numberWithCommas(client.guilds.size)).replace("%users%", numbers.data.numberWithCommas(client.users.size));
     client.user.setActivity(status, {type: "WATCHING"});
   }, 5000);
 
