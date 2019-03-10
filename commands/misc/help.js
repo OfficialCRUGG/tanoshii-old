@@ -49,6 +49,7 @@ function sendBotDev(config, client, cmd, author, message) {
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} developer ● Requested by ${author.tag}`)
     .addField(`${config.prefix}update`, "Update the bot", true)
+    .addField(`${config.prefix}ownerbc`, "Sends a broadcast to all guild owners with Tanoshii", true)
   return message.channel.send(embed);
 }
 
