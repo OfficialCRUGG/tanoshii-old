@@ -29,7 +29,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
 
   } else {
     let embed = new Discord.RichEmbed()
-    .setTitle(`${config.name} - Neko`)
+    .setTitle(`${config.name} - Urban`)
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
     .setDescription("Please use this command in an nsfw channel, as some results may be 18+");
