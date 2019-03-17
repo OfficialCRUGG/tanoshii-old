@@ -28,8 +28,6 @@ Theese things are confirmed and will be part of the bot soon:
 * Web dashboard
 
 ## Contributors
-![GitHub contributors](https://img.shields.io/github/contributors/tanoshiibot/tanoshii.svg?style=social)
-
 [![OfficialCRUGG](https://avatars2.githubusercontent.com/u/25248999?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
 [![Ron31](https://avatars2.githubusercontent.com/u/30264441?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
 [![CuzImKatze](http://cdn.crugg.de/files/github-x32.png)](https://github.com/CuzImKatze "CuzImKatze")
