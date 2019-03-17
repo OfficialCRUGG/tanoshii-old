@@ -23,7 +23,9 @@ Theese things are confirmed and will be part of the bot soon:
 * Music bot
 * Web dashboard
 
-## Developers
-The bot is being developed by CRUGG#0001 & Ron31#2338
+## Contributors
+[![OfficialCRUGG](https://avatars2.githubusercontent.com/u/25248999?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
+[![Ron31](https://avatars2.githubusercontent.com/u/30264441?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
+[![CuzImKatze](http://cdn.crugg.de/files/github-x32.png)](https://github.com/CuzImKatze "CuzImKatze")
 
 [![Codacy Badge](https://api.codacy.com/project/badge/Grade/8fc7a5226c9f45c6b143f723302b13c9)](https://app.codacy.com/app/OfficialCRUGG/manageme_2?utm_source=github.com&utm_medium=referral&utm_content=mm-discord/manageme&utm_campaign=Badge_Grade_Dashboard)
