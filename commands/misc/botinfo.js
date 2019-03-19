@@ -36,7 +36,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
         .addField("Developers", "**Katze**#1784", false)
         .addField("Uptime", uptime, true)
         .addField("node.js Version", process.version, true)
-        .addField("Development Software", "**Atom** (CRUGG & Katze), **JetBrains WebStorm** (Ron31)", false)
+        .addField("Development Software", "**JetBrains WebStorm** (CRUGG & Ron31) & **Atom** (Katze)", false)
         .addField("Guilds", `**${numbers.data.numberWithCommas(client.guilds.size)}** Guilds`, true)
         .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)
         .addField("Performance", `RAM: ${((os.totalmem() - os.freemem()) / 1.074e+9).toFixed(2)}GiB / ${(os.totalmem() / 1.074e+9).toFixed(2)}GiB\n`)
