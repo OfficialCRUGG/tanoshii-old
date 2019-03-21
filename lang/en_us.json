@@ -1,0 +1,7 @@
+{
+  "general": {
+    "loading-category": "[INFO] Loading command category %category%.",
+    "loading-command": "[INFO] Loading command %command%.",
+    "loading-event": "[INFO] Loading event %event%."
+  }
+}
