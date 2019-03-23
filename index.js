@@ -1,6 +1,7 @@
 const config = require("./config.json");
 const Discord = require("discord.js");
 const fs = require("fs");
+const mysql = require("mysql");
 const cmdDir = fs.readdirSync("./commands/");
 const client = new Discord.Client({
   disableEveryone: true
@@ -8,6 +9,13 @@ const client = new Discord.Client({
 client.config = config;
 client.commands = new Discord.Collection();
 client.groups = [];
+
+var con = mysql.createConnection({
+  host: config.database.host,
+  user: config.database.username,
+  password: config.database.password,
+  database: config.database.database
+});
 
 for (let dir of cmdDir) {
   client.groups.push(dir);
@@ -39,3 +47,5 @@ fs.readdir("./events", (err, files) => {
 
 
 client.login(config.token);
+
+module.exports.con = con;

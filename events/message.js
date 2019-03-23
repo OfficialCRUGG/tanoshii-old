@@ -1,4 +1,7 @@
 module.exports = async (client, message) => {
+
+  var { con } = require("../index.js");
+
   if (message.author.bot) {
     return;
   }
@@ -17,6 +20,6 @@ module.exports = async (client, message) => {
   }
   let commandFile = client.commands.get(cmd.slice(prefix.length));
   if (commandFile) {
-    commandFile.run(prefix, messageArray, cmd, client, message, args, author, guild, client.config);
+    commandFile.run(prefix, messageArray, cmd, client, message, args, author, guild, client.config, con);
  }
 };
