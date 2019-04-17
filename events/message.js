@@ -1,6 +1,6 @@
 module.exports = async (client, message) => {
 
-  var { con } = require("../index.js");
+  var { con } = require("../bot.js");
 
   if (message.author.bot) {
     return;
