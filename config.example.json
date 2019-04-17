@@ -6,7 +6,8 @@
     "statuses": [
       "over %guilds% guilds.",
       "for %prefix%help",
-      "over %users% users."
+      "over %users% users.",
+      "shard %shardId%/%shardCount%"
     ],
     "mainColor": "#7289DA",
     "developers": [
