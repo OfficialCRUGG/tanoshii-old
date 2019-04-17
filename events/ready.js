@@ -8,7 +8,7 @@ module.exports = async (client) => {
   let statuses = config.statuses;
   setInterval(function() {
     let statusRaw = statuses[Math.floor(Math.random() * statuses.length)];
-    let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", numbers.data.numberWithCommas(client.guilds.size)).replace("%users%", numbers.data.numberWithCommas(client.users.size));
+    let status = statusRaw.replace("%prefix%", config.prefix).replace("%guilds%", numbers.data.numberWithCommas(client.guilds.size)).replace("%users%", numbers.data.numberWithCommas(client.users.size)).replace("%shardId%", client.shard.id.toString()).replace("%shardCount%", client.shard.count.toString());
     client.user.setActivity(status, {type: "WATCHING"});
   }, 5000);
 

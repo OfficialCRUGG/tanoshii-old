@@ -15,7 +15,9 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     .setDescription("[GitHub Repo](https://github.com/tanoshiibot/tanoshii/) | [Support Server](https://discord.gg/CheqYwR) | [Invite](https://discordapp.com/oauth2/authorize?client_id=522808943945318415&scope=bot&permissions=1073081855)")
     .addField("Guilds", `**${numbers.data.numberWithCommas(client.guilds.size)}** Guilds`, true)
     .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)
-    .addField("Channels", `<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "text").size)}** text channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "voice").size)}** voice channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "category").size)}** categories\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.size)}** total channels`, false)    .addField("node.js Version", process.version, true)
+    .addField("Channels", `<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "text").size)}** text channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "voice").size)}** voice channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "category").size)}** categories\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.size)}** total channels`, false)
+    .addField("node.js Version", process.version, true)
+    .addField("Shard", client.shard.id + "/" + client.shard.count);
     return message.channel.send(embed);
 };
 

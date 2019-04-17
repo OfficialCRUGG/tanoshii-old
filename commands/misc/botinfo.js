@@ -36,6 +36,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
         .addField("Developers", "**Katze**#1784", false)
         .addField("Uptime", uptime, true)
         .addField("node.js Version", process.version, true)
+        .addField("Shard", client.shard.id + "/" + client.shard.count)
         .addField("Development Software", "**JetBrains WebStorm** (CRUGG & Ron31) & **Atom** (Katze)", false)
         .addField("Guilds", `**${numbers.data.numberWithCommas(client.guilds.size)}** Guilds`, true)
         .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)
