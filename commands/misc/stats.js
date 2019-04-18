@@ -8,6 +8,7 @@ const numbers = require("../../utils/numbers.js")
 
 module.exports.run = async (prefix, messageArray, cmd, client, message, args, author, guild, config) => {
 
+    let shardId = client.shard.id + 1;
     let embed = new Discord.RichEmbed()
     .setTitle(`${config.name} - Stats`)
     .setColor(config.mainColor)
@@ -17,7 +18,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
     .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)
     .addField("Channels", `<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "text").size)}** text channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "voice").size)}** voice channels\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.filter((channels) => channels.type === "category").size)}** categories\n<:channels:551715947422154752> **${numbers.data.numberWithCommas(client.channels.size)}** total channels`, false)
     .addField("node.js Version", process.version, true)
-    .addField("Shard", client.shard.id + "/" + client.shard.count);
+    .addField("Shard", shardId + "/" + client.shard.count);
     return message.channel.send(embed);
 };
 
