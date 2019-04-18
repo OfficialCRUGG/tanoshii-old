@@ -24,7 +24,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
       Object.entries(packages.dependencies).forEach((dependency) => {
         dependencies += `<:package:551716343737614336> **[${dependency[0]}](https://npmjs.org/package/${dependency[0]})** ${dependency[1]}\n`
       });
-
+      let shardId = client.shard.id + 1;
       let embed = new Discord.RichEmbed()
         .setTitle(`${config.name} - Bot Info`)
         .setColor(config.mainColor)
@@ -36,7 +36,7 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
         .addField("Developers", "**Katze**#1784", false)
         .addField("Uptime", uptime, true)
         .addField("node.js Version", process.version, true)
-        .addField("Shard", client.shard.id + "/" + client.shard.count)
+        .addField("Shard", shardId + "/" + client.shard.count)
         .addField("Development Software", "**JetBrains WebStorm** (CRUGG & Ron31) & **Atom** (Katze)", false)
         .addField("Guilds", `**${numbers.data.numberWithCommas(client.guilds.size)}** Guilds`, true)
         .addField("Users", `**${numbers.data.numberWithCommas(client.users.size)}** Users`, true)

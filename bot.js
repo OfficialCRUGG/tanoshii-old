@@ -38,7 +38,7 @@ fs.readdir("./events", (err, files) => {
     if (!file.endsWith(".js")) {
       return;
     }
-    console.log("[INFO] Loading event " + file.split(".")[0] + ".");
+    console.log("[INFO] Loading event " + file.spli0t(".")[0] + ".");
     const event = require(`./events/${file}`);
     let eventName = file.split(".")[0];
     client.on(eventName, event.bind(null, client));
