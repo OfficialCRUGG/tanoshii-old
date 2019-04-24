@@ -1,3 +1,5 @@
+const fs = require("fs");
+
 module.exports = async (client, message) => {
 
   var { con } = require("../bot.js");
@@ -18,8 +20,18 @@ module.exports = async (client, message) => {
   if (!message.content.startsWith(prefix)) {
     return;
   }
+
+  let langs = JSON.parse(fs.readFileSync("./data/languages.json", "utf8"));
+  if(!langs[message.guild.id]) {
+    langs[message.guild.id] = {
+      lang: "en_us"
+    }
+  }
+
+  let lang = langs[message.guild.id].lang;
+
   let commandFile = client.commands.get(cmd.slice(prefix.length));
   if (commandFile) {
-    commandFile.run(prefix, messageArray, cmd, client, message, args, author, guild, client.config, con);
+    commandFile.run(prefix, messageArray, cmd, client, message, args, author, guild, client.config, con, lang);
  }
 };

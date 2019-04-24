@@ -7,6 +7,7 @@ function sendHelp(config, client, cmd, author, message) {
     .setFooter(`${config.name} ● ${cmd} ● Requested by ${author.tag}`)
     .setDescription(`Please use ${config.prefix}help <category> to see the commands`)
     .addField("Moderation", "View all moderation commands.", true)
+    .addField("Administration", "View all administration commands.", true)
     // .addField("Economy", "View all economy commands.", true)
     // .addField("Experience", "View all experience commands.", true)
     .addField("Developer", "View commands availible to developers.", true)
@@ -22,6 +23,15 @@ function sendModeration(config, client, cmd, author, message) {
     .setColor(config.mainColor)
     .setFooter(`${config.name} ● ${cmd} moderation ● Requested by ${author.tag}`)
     .addField(`${config.prefix}purge`, "Deletes a set amount of messages (2-100)", true)
+  return message.channel.send(embed);
+}
+
+function sendAdministration(config, client, cmd, author, message) {
+  let embed = new Discord.RichEmbed()
+      .setTitle(`${config.name} - Moderation commands`)
+      .setColor(config.mainColor)
+      .setFooter(`${config.name} ● ${cmd} administration ● Requested by ${author.tag}`)
+      .addField(`${config.prefix}language`, "Shows or changes the current language.", true)
   return message.channel.send(embed);
 }
 
@@ -106,19 +116,21 @@ module.exports.run = async (prefix, messageArray, cmd, client, message, args, au
   if (args.length === 0) {
     return (sendHelp(config, client, cmd, author, message));
   } else if (args.length === 1) {
-    if (args[0] === "moderation" || args[0] === "mod") {
+    if (args[0].toLowerCase() === "moderation" || args[0].toLowerCase() === "mod") {
       return (sendModeration(config, client, cmd, author, message));
-    } else if (args[0] === "economy" || args[0] === "eco" || args[0] === "ec") {
+    } else if (args[0].toLowerCase() === "admin" || args[0].toLowerCase() === "administration") {
+      return (sendAdministration(config, client, cmd, author, message));
+    } else if (args[0].toLowerCase() === "economy" || args[0].toLowerCase() === "eco" || args[0].toLowerCase() === "ec") {
       return (sendEconomy(config, client, cmd, author, message));
-    } else if (args[0] === "experience" || args[0] === "xp" || args[0] === "exp") {
+    } else if (args[0].toLowerCase() === "experience" || args[0].toLowerCase() === "xp" || args[0].toLowerCase() === "exp") {
       return (sendExp(config, client, cmd, author, message));
-    } else if (args[0] === "developer" || args[0] === "dev") {
+    } else if (args[0].toLowerCase() === "developer" || args[0].toLowerCase() === "dev") {
       return (sendBotDev(config, client, cmd, author, message));
-    } else if (args[0] === "fun" || args[0] === "entertainment" || args[0] === "entertain" || args[0] === "humor") {
+    } else if (args[0].toLowerCase() === "fun" || args[0].toLowerCase() === "entertainment" || args[0].toLowerCase() === "entertain" || args[0].toLowerCase() === "humor") {
       return (sendFun(config, client, cmd, author, message));
-    } else if (args[0] === "utility" || args[0] === "utils" || args[0] === "utilities" || args[0] === "util") {
+    } else if (args[0].toLowerCase() === "utility" || args[0].toLowerCase() === "utils" || args[0].toLowerCase() === "utilities" || args[0].toLowerCase() === "util") {
       return (sendUtils(config, client, cmd, author, message));
-    } else if (args[0] === "miscellaneous" || args[0] === "misc") {
+    } else if (args[0].toLowerCase() === "miscellaneous" || args[0].toLowerCase() === "misc") {
       return (sendMisc(config, client, cmd, author, message));
     } else {
       return (sendHelp(config, client, cmd, author, message));

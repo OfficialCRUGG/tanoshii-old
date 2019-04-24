@@ -3,15 +3,16 @@
 const Discord = require("discord.js");
 const fs = require("fs");
 
-module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author, guild, config) => {
+module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author, guild, config, con, lang) => {
+  let strings = require("../../lang/" + lang + ".json");
   if(config.developers.includes(author.id)) {
     let inputRaw = args.join(" ");
     let input = inputRaw.split("//");
     console.log(input.length)
     if(input.length == 1 || input.length > 2) {
       let embed = new Discord.RichEmbed()
-      .setTitle("Invalid arguments")
-      .setDescription("You have not entered 2 arguments seperated by '//'s")
+      .setTitle(strings.commands.invalidArgs)
+      .setDescription(strings.commands.obc.invalidArgs)
       .setColor(config.mainColor);
       return msg.channel.send(embed);
     }
@@ -20,15 +21,11 @@ module.exports.run = async (prefix, messageArray, cmd, client, msg, args, author
       .setTitle(input[0])
       .setDescription(input[1])
       .setColor(config.mainColor)
-      .setFooter("Guild owner broadcast sent by " + msg.author.tag);
+      .setFooter(strings.commands.obc.embedFooter.replace("%sender%", msg.author.tag));
       guild.owner.user.send(embed)
     });
   } else {
-    let embed = new Discord.RichEmbed()
-    .setTitle("No Permissions")
-    .setDescription("You don't have permissions to execute that command.")
-    .setColor(config.mainColor);
-    return msg.channel.send(embed);
+    return msg.reply(strings.commands.noPerms);
   }
 };
 

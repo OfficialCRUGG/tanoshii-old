@@ -1,7 +1,18 @@
 {
-  "general": {
-    "loading-category": "[INFO] Loading command category %category%.",
-    "loading-command": "[INFO] Loading command %command%.",
-    "loading-event": "[INFO] Loading event %event%."
+  "commands": {
+    "noPerms": "Sorry, but you do not have permissions to execute this command.",
+    "invalidArgs": "Invalid arguments",
+
+    "language": {
+      "languageInfo": "The current language is `%lang%`. Use %command% <Language> to set the language.",
+      "languageSet": {
+        "notFound": "The language was not found. We currently support the following languages: %langs%\nBe sure to __exactly__ enter them like above.",
+        "success": "The language has successfully been set to `%lang%`!"
+      }
+    },
+    "obc": {
+      "invalidArgs": "You have not entered 2 arguments seperated by '//'s",
+      "embedFooter": "Guild owner broadcast sent by %sender%"
+    }
   }
 }
