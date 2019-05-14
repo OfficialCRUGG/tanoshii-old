@@ -7,7 +7,7 @@
 ![GitHub](https://img.shields.io/github/license/tanoshiibot/tanoshii.svg?style=for-the-badge) ![Library](https://img.shields.io/badge/Library-discord.js-blue.svg?style=for-the-badge) ![IDE](https://img.shields.io/badge/Made%20with-Webstorm%20%26%20Atom-blue.svg?style=for-the-badge) ![Runs on](https://img.shields.io/badge/Runs%20on-node.js-brightgreen.svg?style=for-the-badge)
 
 ## Introduction
-Tanoshi 楽しい is an open source bot which will contain lots of features. It is still in development though, so it doesn't have that many features.
+Tanoshii 楽しい is an open source bot which will contain lots of features. It is still in development though, so it doesn't have that many features.
 
 ## Todo
 Theese things are confirmed and will be part of the bot soon:
