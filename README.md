@@ -30,4 +30,4 @@ Theese things are confirmed and will be part of the bot soon:
 ## Contributors
 [![OfficialCRUGG](https://avatars2.githubusercontent.com/u/25248999?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
 [![Ron31](https://avatars2.githubusercontent.com/u/30264441?s=32&v=4)](https://github.com/OfficialCRUGG "OfficialCRUGG")
-[![CuzImKatze](https://avatars3.githubusercontent.com/u/46849183?s=460&v=4)](https://github.com/CuzImKatze "CuzImKatze")
+[![CuzImKatze](https://avatars3.githubusercontent.com/u/46849183?s=32&v=4)](https://github.com/CuzImKatze "CuzImKatze")
